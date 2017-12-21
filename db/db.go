@@ -14,7 +14,7 @@ var db *gorm.DB
 func Init() {
 	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME)
 
-	db, err = ConnectDB(dataSourceName)
+	_, err := ConnectDB(dataSourceName)
 
 	if err != nil {
 		panic(err.Error())

@@ -14,9 +14,3 @@ type User struct {
 	CreatedAt  time.Time
 	UpdatedAt  time.Time
 }
-
-//type User struct {}
-
-func (User) TableName() string {
-	return "ecs_users"
-}
