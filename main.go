@@ -33,7 +33,7 @@ func main() {
 	//db.AutoMigrate(&Users{})
 
 	user := Users{ID:4, Name:"xutt",Password:"123456",CountryCode:"86",Mobile:18680663925}
-	db.NewRecord(user)
+	db.Create(&user)
 
 	//if db.NewRecord(user) {
 	//	fmt.Println("true")
