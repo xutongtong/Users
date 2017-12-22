@@ -3,7 +3,6 @@ package main
 import (
 	//"Users/apis"
 	//"github.com/jinzhu/gorm"
-	//_ "github.com/jinzhu/gorm/dialects/mysql"
 	//"fmt"
 	//"time"
 	//"os/user"
@@ -13,8 +12,9 @@ import (
 	//"github.com/jinzhu/gorm"
 	"github.com/google/uuid"
 	"github.com/jinzhu/gorm"
-	"time"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"math/rand"
+	"time"
 )
 
 type Users struct {
