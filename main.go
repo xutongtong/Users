@@ -14,7 +14,7 @@ type Users struct {
 }
 
 func main() {
-	db, err := gorm.Open("mysql", "account:123456789aABC$@tcp(drds4ln637rupoos.drds.aliyuncs.com:3306)/account?charset=utf8bmp&parseTime=True&loc=Local")
+	db, err := gorm.Open("mysql", "account:123456789aABC@tcp(drds4ln637rupoos.drds.aliyuncs.com:3306)/account?charset=utf8bmp&parseTime=True&loc=Local")
 	if err != nil {
 		panic(err.Error())
 	}
