@@ -26,7 +26,7 @@ func main() {
 
 	//db.AutoMigrate(&Users{})
 
-	user := Users{Name:"xutt",Password:"123456",CountryCode:"86",Mobile:18680663925}
+	user := Users{ID:2, Name:"xutt",Password:"123456",CountryCode:"86",Mobile:18680663925}
 	if db.NewRecord(user) {
 		fmt.Println("true")
 	} else {
