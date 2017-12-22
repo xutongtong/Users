@@ -71,10 +71,10 @@
       <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="829">
+              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding>
-                <element signature="e#14#109#0" expanded="true" />
+                <element signature="e#14#127#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -159,8 +159,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1017" />
-    <option name="width" value="1038" />
+    <option name="x" value="1156" />
+    <option name="width" value="899" />
     <option name="height" value="1119" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -282,7 +282,7 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1017" y="0" width="1038" height="1119" extended-state="0" />
+    <frame x="1156" y="0" width="899" height="1119" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30020705" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -331,7 +331,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test orm drds" />
-    <option name="LAST_COMMIT_MESSAGE" value="test orm drds" />
+    <MESSAGE value="print user." />
+    <option name="LAST_COMMIT_MESSAGE" value="print user." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -374,7 +375,7 @@
         <state relative-caret-position="120">
           <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
           <folding>
-            <element signature="e#14#109#0" expanded="true" />
+            <element signature="e#14#127#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -441,7 +442,7 @@
         <state relative-caret-position="240">
           <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
           <folding>
-            <element signature="e#14#109#0" expanded="true" />
+            <element signature="e#14#127#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -515,7 +516,7 @@
         <state relative-caret-position="575">
           <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
           <folding>
-            <element signature="e#14#109#0" expanded="true" />
+            <element signature="e#14#127#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -579,7 +580,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#14#109#0" expanded="true" />
+            <element signature="e#14#127#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -670,10 +671,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="829">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
-            <element signature="e#14#109#0" expanded="true" />
+            <element signature="e#14#127#0" expanded="true" />
           </folding>
         </state>
       </provider>

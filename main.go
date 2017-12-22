@@ -5,6 +5,7 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"fmt"
+	"os/exec"
 )
 
 type Users struct {
@@ -26,8 +27,17 @@ func main() {
 	//db.AutoMigrate(&Users{})
 
 	user := Users{Name:"xutt",Password:"123456",CountryCode:"86",Mobile:18680663925}
-	db.NewRecord(user)
+	if db.NewRecord(user) {
+		fmt.Println("true")
+	} else {
+		panic("error")
+	}
 
 	fmt.Println(user)
+
+	user2 := Users{}
+	db.First(user2, 1)
+
+	fmt.Println(user2)
 	//apis.Init()
 }
