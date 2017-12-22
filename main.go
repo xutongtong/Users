@@ -5,15 +5,17 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"fmt"
+	"time"
 )
 
 type Users struct {
-	gorm.Model
 	ID int64 `gorm:"primary_key"`
 	Name string
 	CountryCode string
 	Mobile int64
 	Password string
+	CreatedAt time.Time
+	UpdatedAt time.Time
 }
 
 type Result struct {
