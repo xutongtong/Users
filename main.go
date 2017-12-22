@@ -4,6 +4,7 @@ import (
 	//"Users/apis"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
+	"fmt"
 )
 
 type Users struct {
@@ -26,5 +27,7 @@ func main() {
 
 	user := Users{Name:"xutt",Password:"123456",CountryCode:"86",Mobile:18680663925}
 	db.NewRecord(user)
+
+	fmt.Println(user)
 	//apis.Init()
 }
