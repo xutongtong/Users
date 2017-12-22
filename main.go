@@ -33,7 +33,7 @@ type Users struct {
 //}
 
 func main() {
-	uuidTime, _, err := uuid.GetTime()
+	id, _, err := uuid.GetTime()
 	if err != nil {
 		panic(err.Error())
 	}
@@ -46,18 +46,17 @@ func main() {
 		panic(err.Error())
 	}
 	defer db.Close()
-	//
+
 	//var id int64
 	//db.Exec("select seq.nextval").Scan(id)
 	//
 	//fmt.Println(id)
 	////
 	////
-	id, _ := uuidTime.UnixTime()
 	name := fmt.Sprintf("xutt%d", rand.Intn(10000))
-	password  := rand.Intn(9999999)
+	password  := fmt.Sprintf("pass%d", rand.Intn(9999999))
 	mobile := 18680663925 + rand.Int63n(1000000)
-	user := Users{ID: id, Name:name,Password:string(password),CountryCode:"86",Mobile:mobile}
+	user := Users{ID: int64(id), Name:name,Password:password,CountryCode:"86",Mobile:mobile}
 	db.Create(&user)
 
 	//if db.NewRecord(user) {
