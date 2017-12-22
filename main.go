@@ -22,7 +22,7 @@ func main() {
 	}
 	defer db.Close()
 
-	db.AutoMigrate(&Users{})
+	//db.AutoMigrate(&Users{})
 
 	user := Users{Name:"xutt",Password:"123456",CountryCode:"86",Mobile:18680663925}
 	db.NewRecord(user)
