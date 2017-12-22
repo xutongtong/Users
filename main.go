@@ -32,7 +32,9 @@ func main() {
 
 	//db.AutoMigrate(&Users{})
 
-	//user := Users{ID:2, Name:"xutt",Password:"123456",CountryCode:"86",Mobile:18680663925}
+	user := Users{ID:4, Name:"xutt",Password:"123456",CountryCode:"86",Mobile:18680663925}
+	db.NewRecord(user)
+
 	//if db.NewRecord(user) {
 	//	fmt.Println("true")
 	//} else {
@@ -45,10 +47,10 @@ func main() {
 	//
 	//fmt.Println(user2)
 	//apis.Init()
-	user := Users{}
-	db.First(&user)
+	user2 := Users{}
+	db.First(&user2)
 
-	fmt.Println(user)
+	fmt.Println(user.Name)
 
 	var result Result
 	db.Raw("SELECT name, password FROM users WHERE name = ?", "xutongtong").Scan(&result)
