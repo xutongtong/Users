@@ -16,6 +16,11 @@ type Users struct {
 	Password string
 }
 
+type Result struct {
+	Name string
+	Password string
+}
+
 func main() {
 	db, err := gorm.Open("mysql", "account:123456789aABC@tcp(drds4ln637rupoos.drds.aliyuncs.com:3306)/account")
 	if err != nil {
@@ -25,18 +30,26 @@ func main() {
 
 	//db.AutoMigrate(&Users{})
 
-	user := Users{ID:2, Name:"xutt",Password:"123456",CountryCode:"86",Mobile:18680663925}
-	if db.NewRecord(user) {
-		fmt.Println("true")
-	} else {
-		panic("error")
-	}
+	//user := Users{ID:2, Name:"xutt",Password:"123456",CountryCode:"86",Mobile:18680663925}
+	//if db.NewRecord(user) {
+	//	fmt.Println("true")
+	//} else {
+	//	panic("error")
+	//}
+
+	//fmt.Println(user)
+	//
+	//db.First(user2, 1)
+	//
+	//fmt.Println(user2)
+	//apis.Init()
+	user := Users{}
+	db.First(&user)
 
 	fmt.Println(user)
 
-	user2 := Users{}
-	db.First(user2, 1)
+	var result Result
+	db.Raw("SELECT name, password FROM users WHERE name = ?", "xutongtong").Scan(&result)
 
-	fmt.Println(user2)
-	//apis.Init()
+	fmt.Println(result)
 }
