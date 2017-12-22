@@ -11,26 +11,30 @@ import (
 
 var db *gorm.DB
 
-func Init() {
+func init() {
 	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME)
 
-	_, err := ConnectDB(dataSourceName)
+	gorm, err := ConnectDB(dataSourceName)
 
 	if err != nil {
 		panic(err.Error())
 	}
+
+	db = gorm
 }
 
 func ConnectDB(dataSourceName string) (*gorm.DB, error){
-	db, err := gorm.Open("mysql", dataSourceName)
+	gorm, err := gorm.Open("mysql", dataSourceName)
 
-	defer db.Close()
+	defer gorm.Close()
 
 	if err != nil {
 		panic("failed to connect database")
 	}
 
-	return db, nil
+	fmt.Println("connect db successed")
+
+	return gorm, nil
 }
 
 func GetDB() *gorm.DB {

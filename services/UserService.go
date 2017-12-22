@@ -1,21 +1,31 @@
 package services
 
 import (
-	"fmt"
-
 	"Users/db"
-	. "Users/models"
+	//"Users/models"
+	"Users/forms"
+	"fmt"
+	"Users/models"
 )
 
 type UserService struct {}
 
+
 // User Signin
-func (us UserService) Login(user User) {
-	db := db.GetDB()
+func (us UserService) Login(form forms.UserLoginForm) {
+	fmt.Println("Start Login")
 
-	db.Model(&user).Select("name, password, salt").Find("name = ?", user.Name)
+	db.GetDB()
 
+	user := models.User{Name:form.Name, Password:form.Password}
+
+	orm.AutoMigrate(&models.User{})
+	orm.NewRecord(user)
+	orm.First(&user, 1)
+	orm.Exec("SELECT * FROM users")
+	//
 	fmt.Println(user)
+	//db.Model(&models.User{}).Select("name, password, salt").Find("name = ?", form.Name)
 }
 
 // User Signup

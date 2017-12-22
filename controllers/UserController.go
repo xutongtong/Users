@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"fmt"
+	//"fmt"
 
-	//"Users/models"
+	"Users/forms"
 	"Users/services"
 	"github.com/gin-gonic/gin"
 )
@@ -14,26 +14,20 @@ var server = new(services.UserService)
 
 // User Sign
 func (uc UserController) Login(c *gin.Context) {
-	fmt.Println("Start")
+	//fmt.Println("Start")
+	userLoginForm := forms.UserLoginForm{Name:"xutt", Password:"123456"}
+	server.Login(userLoginForm)
 
-	name1, flag := c.Get("name")
-	if flag {
-		fmt.Println("not exist")
-	}
-	name := c.Param("name")
-	password := c.Param("password")
+	//name1, flag := c.Get("name")
+	//if flag {
+	//	fmt.Println("not exist")
+	//}
+	//name := c.Param("name")
+	//password := c.Param("password")
 
-	fmt.Println(name1)
-	fmt.Printf("Name:%s", name)
-	fmt.Println(password)
-
-	//newUser := models.User{Name:name,Password:password}
-	//
-	//fmt.Println(newUser)
-	//
-	//server.Login(newUser)
-	//
-	//fmt.Println("End")
+	//fmt.Println(name1)
+	//fmt.Printf("Name:%s", name)
+	//fmt.Println(password)
 }
 
 // User Signup

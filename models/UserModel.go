@@ -14,3 +14,8 @@ type User struct {
 	CreatedAt  time.Time
 	UpdatedAt  time.Time
 }
+
+// set User's table name to be `users`
+//func (User) TableName() string {
+//	return "users"
+//}
