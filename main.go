@@ -10,6 +10,8 @@ type Users struct {
 	gorm.Model
 	ID int64 `gorm:"primary_key"`
 	Name string
+	CountryCode string
+	Mobile int64
 	Password string
 }
 
@@ -22,6 +24,7 @@ func main() {
 
 	db.AutoMigrate(&Users{})
 
-	db.Create(Users{Name:"xutt",Password:"123456"})
+	user := Users{Name:"xutt",Password:"123456",CountryCode:"86",Mobile:18680663925}
+	db.NewRecord(user)
 	//apis.Init()
 }
