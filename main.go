@@ -2,18 +2,23 @@ package main
 
 import (
 	//"Users/apis"
-	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/mysql"
+	//"github.com/jinzhu/gorm"
+	//_ "github.com/jinzhu/gorm/dialects/mysql"
 	//"fmt"
 	//"time"
 	//"os/user"
 	//"time"
 	"fmt"
+	//"time"
+	//"github.com/jinzhu/gorm"
+	"github.com/google/uuid"
+	"github.com/jinzhu/gorm"
 	"time"
+	"math/rand"
 )
 
 type Users struct {
-	ID int64 `gorm:"primary_key"`
+	ID int64
 	Name string
 	CountryCode string
 	Mobile int64
@@ -28,9 +33,11 @@ type Users struct {
 //}
 
 func main() {
-	//id := uuid.New()
+	uuidTime, _, err := uuid.GetTime()
+	if err != nil {
+		panic(err.Error())
+	}
 
-	//fmt.Println(uint64())
 	//fmt.Println(uuid.Must(uuid.NewRandom()))
 	//fmt.Println(uint64(os.Getegid()))
 
@@ -39,14 +46,18 @@ func main() {
 		panic(err.Error())
 	}
 	defer db.Close()
-
-	var id int64
-	db.Exec("select seq.nextval").Scan(id)
-
-	fmt.Println(id)
 	//
+	//var id int64
+	//db.Exec("select seq.nextval").Scan(id)
 	//
-	user := Users{ID:id, Name:"xutt",Password:"123456",CountryCode:"86",Mobile:18680663925}
+	//fmt.Println(id)
+	////
+	////
+	id, _ := uuidTime.UnixTime()
+	name := fmt.Sprintf("xutt%d", rand.Intn(10000))
+	password  := rand.Intn(9999999)
+	mobile := 18680663925 + rand.Int63n(1000000)
+	user := Users{ID: id, Name:name,Password:string(password),CountryCode:"86",Mobile:mobile}
 	db.Create(&user)
 
 	//if db.NewRecord(user) {
