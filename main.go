@@ -33,11 +33,6 @@ type Users struct {
 //}
 
 func main() {
-	id, _, err := uuid.GetTime()
-	if err != nil {
-		panic(err.Error())
-	}
-
 	//fmt.Println(uuid.Must(uuid.NewRandom()))
 	//fmt.Println(uint64(os.Getegid()))
 
@@ -53,11 +48,24 @@ func main() {
 	//fmt.Println(id)
 	////
 	////
-	name := fmt.Sprintf("xutt%d", rand.Intn(10000))
-	password  := fmt.Sprintf("pass%d", rand.Intn(9999999))
-	mobile := 18680663925 + rand.Int63n(1000000)
-	user := Users{ID: int64(id), Name:name,Password:password,CountryCode:"86",Mobile:mobile}
-	db.Create(&user)
+	var i int = 0
+	for {
+		id, _, err := uuid.GetTime()
+		if err != nil {
+			panic(err.Error())
+		}
+		name := fmt.Sprintf("xutt%d", rand.Intn(10000))
+		password  := fmt.Sprintf("pass%d", rand.Intn(9999999))
+		mobile := 18680663925 + rand.Int63n(10000)
+		user := Users{ID: int64(id), Name:name,Password:password,CountryCode:"86",Mobile:mobile}
+		db.Create(&user)
+
+		if i >= 100000 {
+			break
+		}
+
+		i++
+	}
 
 	//if db.NewRecord(user) {
 	//	fmt.Println("true")
