@@ -10,21 +10,27 @@ import (
 
 type UserService struct {}
 
+var orm = db.GetDB()
 
 // User Signin
 func (us UserService) Login(form forms.UserLoginForm) {
 	fmt.Println("Start Login")
+	user := models.User{Name:form.Name, Password:form.Password, Mobile:"18680663925", Salt:"123456", Source:"self"}
 
-	db.GetDB()
-
-	user := models.User{Name:form.Name, Password:form.Password}
-
-	orm.AutoMigrate(&models.User{})
-	orm.NewRecord(user)
-	orm.First(&user, 1)
-	orm.Exec("SELECT * FROM users")
-	//
 	fmt.Println(user)
+	//orm.AutoMigrate(&models.User{})
+	orm.NewRecord(user)
+	orm.Create(user)
+	orm.NewRecord(user)
+
+
+	//user1 := models.User{}
+	//orm.First(&user1, 2)
+	//fmt.Println(user1)
+	//
+	//user2 := models.User{}
+	//orm.First(&user2, 3)
+	//fmt.Println(user2)
 	//db.Model(&models.User{}).Select("name, password, salt").Find("name = ?", form.Name)
 }
 
