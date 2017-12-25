@@ -1,11 +1,14 @@
 package main
 
 import (
-	"Users/db"
-	"Users/apis"
+	"github.com/xutongtong/Users/router"
+	"github.com/xutongtong/Users/db"
+	"github.com/xutongtong/Users/model"
 )
 
 func main() {
-	apis.Init()
-	defer db.CloseDB()
+	db.Init()
+	model.Init()
+
+	router.Init()
 }
